@@ -1,0 +1,56 @@
+<nav>
+  <ul class="menu">
+    <li>
+      <a href="/" class="button <%= path === '/' ? 'active' : '' %>">Shop</a>
+    </li>
+    <li>
+      <a
+        href="/products"
+        class="button <%= path === '/products' ? 'active' : '' %>"
+        >Products</a
+      >
+    </li>
+    <% if (isAuthenticated) { %>
+    <li>
+      <a href="/cart" class="button <%= path === '/cart' ? 'active' : '' %>"
+        >Cart</a
+      >
+    </li>
+    <li>
+      <a href="/orders" class="button <%= path === '/orders' ? 'active' : '' %>"
+        >Orders</a
+      >
+    </li>
+    <li>
+      <a
+        href="/admin/add-product"
+        class="button <%= path === '/admin/add-product' ? 'active' : '' %>"
+        >Add Products</a
+      >
+    </li>
+    <li>
+      <a
+        href="/admin/products"
+        class="button <%= path === '/admin/products' ? 'active' : '' %>"
+        >Admin Products</a
+      >
+    </li>
+    <% } %> <% if (!isAuthenticated) { %>
+    <li>
+      <a href="/signup" class="button">Signup</a>
+    </li>
+    <li>
+      <a href="/login" class="button">Login</a>
+    </li>
+    <% } else { %>
+    <li></li>
+    <li>
+      <form action="/logout" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button type="submit" class="button">Logout</button>
+      </form>
+    </li>
+    <% } %>
+  </ul>
+</nav>
+<div class="clear"></div>

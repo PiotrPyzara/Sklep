@@ -1,0 +1,137 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+}
+
+.centered {
+  text-align: center;
+}
+
+nav {
+  width: 100%;
+  float: left;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  height: 2.15rem;
+  background-color: #334a94;
+}
+
+.menu li,
+.menu li > a {
+  display: inline-block;
+}
+
+.menu > li:nth-last-child(2),
+.menu > li:nth-last-child(1) {
+  float: right;
+}
+
+.button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-style: none;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  display: inline;
+  box-sizing: initial;
+}
+
+li form .button {
+  padding: 8px;
+}
+
+.button:link {
+  background-color: #334a94;
+  color: white;
+}
+
+.button:hover {
+  background-color: #785ed4;
+}
+
+.clear {
+  clear: both;
+}
+
+.wraper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.wraper_item {
+  width: 300px;
+  min-height: 420px;
+  margin: 1rem;
+  text-align: center;
+  border-radius: 10%;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.active {
+  color: yellow;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  font: inherit;
+  border: 1px solid #334a94;
+  color: #334a94;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #334a94;
+  color: white;
+}
+
+.big_img {
+  width: 350px;
+  height: 350px;
+}
+
+.btn_active {
+  background-color: #334a94;
+  color: white;
+}
+
+.user-message {
+  margin: auto;
+  width: 90%;
+  border: 1px solid #4771fa;
+  padding: 0.5rem;
+  border-radius: 3px;
+  background: #b9c9ff;
+  text-align: center;
+}
+
+.user-message--error {
+  border-color: red;
+  background: rgb(255, 176, 176);
+  color: red;
+}

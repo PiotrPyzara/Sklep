@@ -1,0 +1,35 @@
+<%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/form.css">
+  </head>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+      <% if (errorMessage) { %>
+        <div class="user-message user-message--error"><%= errorMessage %></div>
+    <% } %>
+      <form action="/admin/add-product" method="post" class="product-form" enctype="multipart/form-data">
+        <div class="form-control">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" value="<%= oldInput.title %>">
+        </div>
+        <div class="form-control">
+          <label for="image">Image</label>
+                <input 
+                    type="file" 
+                    name="image" 
+                    id="image" >
+        </div>
+        <div class="form-control">
+          <label for="price">Price</label>
+          <input type="number" step="0.01" name="price" id="price" value="<%= oldInput.price %>">
+        </div>
+        <div class="form-control">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" cols="30" rows="5"><%= oldInput.description %></textarea>
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button type="submit" class="btn">Add Product</button>
+      </form>
+    </main>
+    
+<%- include('../includes/end.ejs') %>

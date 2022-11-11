@@ -1,0 +1,30 @@
+<div class="centered">
+  <% if (hasBackPage && currentPage > 2) { %><a href="?page=1" class="btn"
+    ><<</a
+  >
+  <% } %> <% if (hasBackPage) { %><a href="?page=<%= backPage %>" class="btn"
+    ><</a
+  >
+  <% } %> <% if (lastPage > 1) { %> <% for (let i = 1; i <= lastPage; i++) { %>
+  <a
+    href="?page=<%= i %>"
+    class="btn <%= currentPage === i ? 'btn_active' : '' %>"
+    ><%= i %></a
+  >
+  <% } %> <% } else if(currentPage < lastPage && lastPage > 3) { %>
+  <a href="?page=<%= backPage %>" class="btn"><%= backPage %></a>
+  <a href="?page=<%= currentPage %>" class="btn btn_active"
+    ><%= currentPage %></a
+  >
+  <a href="?page=<%= nextPage %>" class="btn"><%= nextPage %></a>
+  <% } else if(currentPage === lastPage && lastPage > 3) { %>
+  <a href="?page=<%= currentPage - 2 %>" class="btn"><%= currentPage - 2 %></a>
+  <a href="?page=<%= currentPage - 1 %>" class="btn"><%= currentPage - 1 %></a>
+  <a href="?page=<%= currentPage %>" class="btn btn_active"
+    ><%= currentPage %></a
+  >
+  <% } %> <% if (hasNextPage) { %><a href="?page=<%= nextPage %>" class="btn"
+    >></a
+  >
+  <% } %>
+</div>
