@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const path = require('path');
 
 const express = require('express');
@@ -8,12 +10,9 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const multer = require('multer');
 
-const MONGODB_URI =
-  'mongodb+srv://admin:vnUDPAUzwu1bQXcN@cluster0.x6il2.mongodb.net/shop?retryWrites=true&w=majority';
-
 const app = express();
 const store = new MongoDBStore({
-  uri: MONGODB_URI,
+  uri: process.env.MONGODB_URI,
   collection: 'sessions',
 });
 
@@ -111,9 +110,9 @@ app.use((error, req, res, next) => {
 const User = require('./models/user');
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(process.env.MONGODB_URI)
   .then((result) => {
-    app.listen(8080);
+    app.listen(process.env.PORT | 3000);
   })
   .catch((err) => {
     console.log(err);
