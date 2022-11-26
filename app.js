@@ -113,7 +113,7 @@ const User = require('./models/user');
 mongoose
   .connect(MONGODB_URI)
   .then((result) => {
-    app.listen(3000);
+    app.listen(8080);
   })
   .catch((err) => {
     console.log(err);
